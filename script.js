@@ -18,10 +18,14 @@ async function handleRedirectBasedOnRegion() {
     const region = await getUserRegion();
     
     if (region === 'BR') {
-        console.log('User is in BR region, redirecting to the app store link...');
+        // Redirect to the Samsung App link if in BR region
         window.location.href = 'https://galaxy.store/queen8';
+    } else if (region === 'PH') {
+        // Show the content if in PH region
+        document.getElementById('sideA').style.display = 'block';
+        document.getElementById('sideB').style.display = 'none';
     } else {
-        console.log('User is not in BR region, hiding "Play Now" button...');
+        // Hide the "Play Now" button for other regions
         document.getElementById('play-now').style.display = 'none';
         document.getElementById('sideA').style.display = 'block';
         document.getElementById('sideB').style.display = 'none';

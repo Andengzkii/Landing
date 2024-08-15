@@ -1,7 +1,7 @@
 // Simulate different regions for local testing
 async function getUserRegion() {
     // Simulate region data. Change this value to test different regions.
-    const simulatedRegion = 'PH'; // Change this to 'BR' or other values to test
+    const simulatedRegion = 'BR'; // Change this to 'PH' or other values to test
     
     console.log(`Simulated region: ${simulatedRegion}`); // Debug log
     return simulatedRegion;
@@ -21,6 +21,7 @@ async function handleRedirectBasedOnRegion() {
         // Show the content if in PH region
         document.getElementById('sideA').style.display = 'block';
         document.getElementById('sideB').style.display = 'none';
+        document.getElementById('play-now').style.display = 'none'; // Hide the Play Now button
     } else {
         console.log('Hiding Play Now button for other regions...'); // Debug log
         // Hide the "Play Now" button for other regions
@@ -30,5 +31,5 @@ async function handleRedirectBasedOnRegion() {
     }
 }
 
-// Ensure the script runs after the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', handleRedirectBasedOnRegion);
+// Ensure the script runs as soon as possible after the page load
+window.addEventListener('load', handleRedirectBasedOnRegion);

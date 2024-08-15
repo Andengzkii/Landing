@@ -1,17 +1,9 @@
-// Function to get user's IP region
+// Simulate different regions for local testing
 async function getUserRegion() {
-    try {
-        const response = await fetch('https://mgdplaygames.pro/region');
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        console.log('Region data:', data); // Log region data for debugging
-        return data.region; // Adjust according to actual response structure
-    } catch (error) {
-        console.error('Error fetching region data:', error);
-        return null; // Fallback in case of error
-    }
+    // Simulate region data. Change this value to test different regions.
+    const simulatedRegion = 'PH'; // Change this to 'BR' or other values to test
+    
+    return simulatedRegion;
 }
 
 async function handleRedirectBasedOnRegion() {

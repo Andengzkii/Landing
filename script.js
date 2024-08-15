@@ -1,7 +1,7 @@
 // Simulate different regions for local testing
 async function getUserRegion() {
     // Simulate region data. Change this value to test different regions.
-    const simulatedRegion = 'BR'; // Change this to 'PH' or other values to test
+    const simulatedRegion = 'PH'; // Change this to 'BR' or other values to test
     
     console.log(`Simulated region: ${simulatedRegion}`); // Debug log
     return simulatedRegion;
@@ -11,7 +11,7 @@ async function handleRedirectBasedOnRegion() {
     const region = await getUserRegion();
     
     console.log(`Detected region: ${region}`); // Debug log
-    
+
     if (region === 'BR') {
         console.log('Redirecting to Samsung App link...'); // Debug log
         // Redirect to the Samsung App link if in BR region
@@ -30,4 +30,5 @@ async function handleRedirectBasedOnRegion() {
     }
 }
 
-handleRedirectBasedOnRegion();
+// Ensure the script runs after the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', handleRedirectBasedOnRegion);

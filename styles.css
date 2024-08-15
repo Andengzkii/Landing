@@ -20,11 +20,22 @@ body {
 }
 
 /* Style the header */
+header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header .icon {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    margin-right: 10px;
+}
+
 header h1 {
     font-size: 2.5rem;
     color: #77aaff;
     text-align: center;
-    margin-bottom: 20px;
 }
 
 /* Style the main content */
@@ -69,4 +80,19 @@ blockquote {
 
 .cta-button:hover {
     background: #6699cc;
+}
+
+/* Style for screenshots */
+.screenshots {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.screenshots img {
+    width: 30%; /* Adjust size as needed */
+    margin: 10px;
+    border: 2px solid #ddd; /* Optional: Adds border around images */
+    border-radius: 5px; /* Optional: Rounds the corners */
 }

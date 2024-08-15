@@ -1,19 +1,27 @@
-// Function to get user's IP region (for example purposes, replace with actual implementation)
+// Function to get user's IP region
 async function getUserRegion() {
-    // Placeholder URL, replace with your IP region detection service
-    const response = await fetch('https://mgdplaygames.pro/region');
-    const data = await response.json();
-    return data.region; // Assuming the response contains a 'region' property
+    try {
+        const response = await fetch('https://mgdplaygames.pro/region');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        console.log('Region data:', data); // Log region data for debugging
+        return data.region; // Adjust according to actual response structure
+    } catch (error) {
+        console.error('Error fetching region data:', error);
+        return null; // Fallback in case of error
+    }
 }
 
 async function handleRedirectBasedOnRegion() {
     const region = await getUserRegion();
     
     if (region === 'BR') {
-        // Redirect to the Samsung App link
+        console.log('User is in BR region, redirecting to the app store link...');
         window.location.href = 'https://galaxy.store/queen8';
     } else {
-        // Hide the "Play Now" button if not in BR region
+        console.log('User is not in BR region, hiding "Play Now" button...');
         document.getElementById('play-now').style.display = 'none';
         document.getElementById('sideA').style.display = 'block';
         document.getElementById('sideB').style.display = 'none';

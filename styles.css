@@ -1,40 +1,72 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* Reset default margins and padding */
+body, h1, h2, p, blockquote {
     margin: 0;
     padding: 0;
 }
 
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
+/* Set a background color for the whole page */
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
     color: #333;
 }
 
-p {
-    color: #666;
+/* Center the container and set a max width */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-#sideA, #sideB {
-    display: none;
-}
-
-#sideB a {
-    display: block;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #77aaff;
-    color: #fff;
+/* Style the header */
+header h1 {
+    font-size: 2.5rem;
+    color: #77aaff;
     text-align: center;
-    text-decoration: none;
+    margin-bottom: 20px;
 }
 
-#sideB a:hover {
-    background-color: #5598ff;
+/* Style the main content */
+main {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Style headings and paragraphs */
+h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 20px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+blockquote {
+    background: #eee;
+    border-left: 5px solid #77aaff;
+    padding: 10px 20px;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+/* Style the call-to-action button */
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #77aaff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.cta-button:hover {
+    background: #6699cc;
 }
